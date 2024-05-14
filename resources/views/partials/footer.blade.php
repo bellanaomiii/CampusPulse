@@ -7,7 +7,7 @@
             <div class="box">
                 <h3> Download <br/>CampusPulse App</h3>
                 <div class="image">
-                    <img src="img/QR_CampusPulse.png" alt="">
+                    <img src="{{asset('img/QR_CampusPulse.png')}}" alt="">
                 </div>
             </div>
 

@@ -8,7 +8,7 @@
         <div class="row">
     
             <div class="image">
-                <img src="img/CampusPulse.png" alt="" height="800px">
+                <img src="{{asset('img/CampusPulse.png')}}" alt="" height="800px">
             </div>
     
             <div class="content">

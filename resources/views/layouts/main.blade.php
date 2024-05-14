@@ -14,9 +14,7 @@
 <body>
     @include('partials.navbar')
 
-    <div class="container">
-        @yield('container')
-    </div>
+    @yield('container')
 
     @include('partials.footer')
     
@@ -24,6 +22,6 @@
     <!-- swiper cdn link -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- custom js link -->
-    <script src="js/script.js"></script>
+    <script src="{{asset('js/script.js')}}"></script>
 </body>
 </html>
