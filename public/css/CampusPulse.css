@@ -798,6 +798,131 @@ section{
 
 /* end */
 
+/* CSS for Login Page */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-size: cover;
+}
+
+@media (min-width: 768px) {
+    .w-50 {
+        box-shadow: 0 3px 6px hsla(0, 0%, 0%, 0.1);
+        border-radius: 10px;
+        width: 28rem;
+    }
+}
+
+.w-50 {
+    background: white;
+}
+
+.w-50 h1 {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #3498db;
+}
+
+.w-50 .form-control {
+    position: relative;
+}
+
+.w-50 .form-control input {
+    width: 100%;
+    margin-bottom: 20px;
+    height: 40px;
+    border: none;
+    border-bottom: 2px solid #777;
+    outline: none;
+    background: transparent;
+    padding-left: 40px;
+    font-weight: bold;
+    color: #777;
+}
+
+.w-50 .form-control span {
+    position: absolute;
+    top: 8px;
+    padding-left: 10px;
+    color: #777;
+}
+
+.w-50 .form-control input::placeholder {
+    padding-left: 0px;
+}
+
+.w-50 .form-control input:focus,
+.w-50 .form-control input:valid {
+    border-bottom: 2px solid #0b1f56;
+}
+
+.w-50 button[type="submit"] {
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    background: linear-gradient(45deg, #4ea585, #0b1f56);
+    color: #fff;
+    font-weight: bold;
+    transition: 0.5s;
+    margin-bottom: 10px;
+}
+
+.w-50 button[type="submit"]:hover {
+    background: linear-gradient(45deg, #0b1f56, #4ea585);
+}
+
+.btn-link {
+    color: #0b1f56;
+    font-weight: bold;
+}
+
+.btn-link:hover {
+    color: #ffb526;
+    text-decoration: none;
+}
+
+.w-50 .btn-social {
+    color: #fff;
+    border: 0;
+    display: inline-block;
+    font-weight: bold;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    margin: 0px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.w-50 .btn-facebook {
+    background: #4866a8;
+}
+
+.w-50 .btn-google {
+    background: #da3f34;
+}
+
+.w-50 .btn-twitter {
+    background: #33ccff;
+}
+
+.w-50 .btn-facebook:hover {
+    background: hsla(221, 40%, 40%, 1);
+}
+
+.w-50 .btn-google:hover {
+    background: hsla(4, 59%, 47%, 1);
+}
+
+.w-50 .btn-twitter:hover {
+    background: hsla(195, 78%, 54%, 1);
+}
+
+
 /* footer */
 
 .footer{
@@ -902,14 +1027,6 @@ section{
 }
 
 /* end */
-
-
-
-
-
-
-
-
 
 
 /* media query */

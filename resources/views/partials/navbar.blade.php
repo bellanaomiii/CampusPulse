@@ -20,7 +20,7 @@
         <div class="icons">
             <div class="fas fa-bars" id="menu"></div>
             
-            <a href="./LoginForm/LoginCampus.php"> 
+            <a href="/login"> 
                 <div class="fas fa-user" id="login-btn"></div>
             </a>
             

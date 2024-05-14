@@ -9,7 +9,7 @@
     <!-- swiper cdn link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- custom css link -->
-    <link rel="stylesheet" href="css/styleCampus.css">
+    <link rel="stylesheet" href="{{ asset('css/CampusPulse.css') }}">
 </head>
 <body>
     @include('partials.navbar')

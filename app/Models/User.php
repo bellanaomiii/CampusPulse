@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',  // Ensure the role is mass assignable
     ];
 
     /**

@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SesiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('dashboard', [
+    return view('Dashboard', [
         "title" => "Home"
     ]);
 });
@@ -54,3 +58,45 @@ Route::get('/internships', function () {
         "title" => "Internships"
     ]);
 });
+
+Route::get('/dbconn', function () {
+    return view('dbconn');
+});
+
+
+Route::middleware(['guest'])->group(function() {
+    Route::get('/login', [SesiController::class, 'index'])->name('login');
+    Route::post('/login', [SesiController::class, 'login']);
+});
+
+Route::get('/home', function () {
+    return redirect('/admin');
+});
+
+Route::middleware(['auth'])->group(function() {
+    Route::get('/admin', [AdminController::class, 'index'])->middleware('admin');
+    Route::get('/user', [AdminController::class, 'user']);
+    Route::get('/logout', [SesiController::class, 'logout']);
+
+});
+
+
+Route::get('/login', [SesiController::class, 'index'])->name('login');
+Route::post('/login', [SesiController::class, 'login']);
+Route::post('/logout', [SesiController::class, 'logout'])->name('logout');
+
+Route::get('/register', [SesiController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [SesiController::class, 'register']);
+
+
+Route::get('/dash', function () {
+    return view('dash', [
+        "title" => "Dashboard Admin"
+    ]);
+});
+
+
+
+
+
+
