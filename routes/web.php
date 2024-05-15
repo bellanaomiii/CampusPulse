@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SesiController;
-
+use App\Http\Controllers\Admin\CategoriesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -89,14 +89,15 @@ Route::get('/register', [SesiController::class, 'showRegistrationForm'])->name('
 Route::post('/register', [SesiController::class, 'register']);
 
 
-Route::get('/dash', function () {
-    return view('dash', [
-        "title" => "Dashboard Admin"
-    ]);
+
+Route::view('/example-page','example-page');
+Route::view('/example-auth','example-auth');
+
+
+// routes/web.php
+
+Route::prefix('admin')->name('admin.')->group(function() {
+    Route::prefix('manage-categories')->name('manage-categories.')->group(function(){
+        Route::get('/', [CategoriesController::class, 'catSubcatList'])->name('cats-subcat-list');
+    });
 });
-
-
-
-
-
-
