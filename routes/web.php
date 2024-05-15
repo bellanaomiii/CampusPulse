@@ -57,10 +57,6 @@ Route::get('/dbconn', function () {
     return view('dbconn');
 });
 
-Route::get('/coba', function (){
-    return view('coba');
-});
-
 Route::middleware(['guest'])->group(function() {
     Route::get('/login', [SesiController::class, 'index'])->name('login');
     Route::post('/login', [SesiController::class, 'login']);
@@ -97,4 +93,8 @@ Route::get('/homepage', function () {
     return view('homepage', [
         "title" => "HomePage"
     ]);
+});
+
+Route::get('/homepage', function () {
+    return 'homepage';
 });
