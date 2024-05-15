@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SesiController;
-use App\Http\Controllers\Admin\CategoriesController;
+use App\Http\Controllers\DashAdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,12 +26,6 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about', [
         "title" => "About Us"
-    ]);
-});
-
-Route::get('/event', function () {
-    return view('event', [
-        "title" => "Event"
     ]);
 });
 
@@ -63,6 +57,9 @@ Route::get('/dbconn', function () {
     return view('dbconn');
 });
 
+Route::get('/coba', function (){
+    return view('coba');
+});
 
 Route::middleware(['guest'])->group(function() {
     Route::get('/login', [SesiController::class, 'index'])->name('login');
@@ -88,16 +85,16 @@ Route::post('/logout', [SesiController::class, 'logout'])->name('logout');
 Route::get('/register', [SesiController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [SesiController::class, 'register']);
 
+Route::get('/login', [SesiController::class, 'index'])->name('login');
 
+Route::get('/event', function () {
+    return view('event', [
+        "title" => "Events"
+    ]);
+});
 
-Route::view('/example-page','example-page');
-Route::view('/example-auth','example-auth');
-
-
-// routes/web.php
-
-Route::prefix('admin')->name('admin.')->group(function() {
-    Route::prefix('manage-categories')->name('manage-categories.')->group(function(){
-        Route::get('/', [CategoriesController::class, 'catSubcatList'])->name('cats-subcat-list');
-    });
+Route::get('/homepage', function () {
+    return view('homepage', [
+        "title" => "HomePage"
+    ]);
 });
