@@ -17,7 +17,9 @@ class acaraController extends Controller
     {
         $data = acara::orderBy('Category', 'asc')->get();
         // Cetak data untuk memastikan data sudah diambil dari database
-        return view('AdminDashboard.acara')->with('data', $data);
+        return view('AdminDashboard.acara', [
+            "title" => "Acara"
+        ])->with('data', $data);
     }
     
 
@@ -39,15 +41,15 @@ class acaraController extends Controller
      */
     public function store(Request $request) // memasukkan data baru ke database
     {
-        Session::flash('category', $request->category);
+        Session::flash('Category', $request->Category);
         
         $request->validate([
-            'category'=>'required'
+            'Category'=>'required'
         ],[
-            'category.required'=>'Category wajib diisi'
+            'Category.required'=>'Category wajib diisi'
         ]);
         $data = [
-            'category'=>$request->category
+            'Category'=>$request->Category
         ];
         acara::create($data);
         Session::flash('success', 'Category Berhasil Ditambahkan!');
@@ -73,7 +75,8 @@ class acaraController extends Controller
      */
     public function edit($id) //menampilkan form untuk proses edit
     {
-        //
+        $data = acara::where('Category', $id)->first();
+        return view('AdminDashboard.edit')->with('data', $data);
     }
 
     /**
@@ -85,7 +88,16 @@ class acaraController extends Controller
      */
     public function update(Request $request, $id) //update data
     {
-        //
+        $request->validate([
+            'Category'=>'required'
+        ],[
+            'Category.required'=>'Category wajib diisi'
+        ]);
+        $data = [
+            'Category'=>$request->Category
+        ];
+        acara::where('Category',$id)->update($data);
+        return redirect()->to('acara')->with('success', 'Berhasil Update Data!');
     }
 
     /**

@@ -30,7 +30,7 @@
                 </li>
 
                 <li>
-                    <a href="/event">
+                    <a href="/acara">
                         <span class="icon">
                             <ion-icon name="grid-sharp"></ion-icon>
                         </span>

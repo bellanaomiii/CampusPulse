@@ -37,18 +37,20 @@
           </div>
           <div class="modal-body">
             <!-- START FORM -->
-            <form action='{{ url('acara') }}' method='post'>
+            <form action='{{ url('acara/'.$data->Category) }}' method='post'>
                 @csrf
+                @method('PUT')
                 <div class="my-3 p-3 bg-body rounded shadow-sm">
+                    <a href='{{ url('acara') }}' class="btn btn-secondary"><< kembali</a>
                     <div class="mb-3 row">
                         <label for="category" class="col-sm-2 col-form-label">Category</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name='category' value="{{ old('category') }}" id="category">
+                            <input type="text" class="form-control" name='category' value="{{ $data->Category }}" id="category">
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <div class="col-sm-10 offset-sm-2">
-                            <button type="submit" class="btn btn-primary" id="submit" name="submit">SIMPAN</button>
+                            <button type="submit" class="btn btn-primary" name="submit">SIMPAN</button>
                         </div>
                     </div>
                 </div>
