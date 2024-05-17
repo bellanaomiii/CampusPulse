@@ -13,7 +13,7 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     
     <!-- CSS link -->
-    <link rel="stylesheet" href="css/campusPulse.css">
+    <link rel="stylesheet" href="css/CampusPulse.css">
 </head>
 <body style="background-image: url('img/bgbiru.jpg')">
     <div class="container infinity-container">

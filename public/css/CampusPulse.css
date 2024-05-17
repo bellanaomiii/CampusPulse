@@ -830,7 +830,7 @@ section {
 }
 
 .infinity-form {
-    background: linear-gradient(395deg, #2980b9, #fff);;
+    background: white;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Menambahkan efek bayangan */
     padding: 20px; /* Memberikan ruang di sekitar formulir */

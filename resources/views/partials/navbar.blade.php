@@ -24,7 +24,9 @@
                 <div class="fas fa-user" id="login-btn"></div>
             </a>
             
-            <div class="fas fa-bell"></div>
+            <a href="/notification">
+                <div class="fas fa-bell"></div>
+            </a>
         </div>
 
     </header>

@@ -13,9 +13,9 @@
 
             <div class="box">
                 <h3>Our Events</h3>
-                <a href="#feature" class="links"> <i class="fas fa-arrow-right"></i> Competitions</a>
-                <a href="#feature" class="links"> <i class="fas fa-arrow-right"></i> Scholarships</a>
-                <a href="#feature" class="links"> <i class="fas fa-arrow-right"></i> Internships</a>        
+                <a href="/competitions" class="links"> <i class="fas fa-arrow-right"></i> Competitions</a>
+                <a href="/scholarships" class="links"> <i class="fas fa-arrow-right"></i> Scholarships</a>
+                <a href="/internships" class="links"> <i class="fas fa-arrow-right"></i> Internships</a>        
             </div>
             
             <div class="box">

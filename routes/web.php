@@ -1,11 +1,14 @@
 <?php
 
+use App\Http\Controllers\acaraController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\eventController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SesiController;
-use App\Http\Controllers\DashAdminController;
+use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -84,17 +87,37 @@ Route::post('/register', [SesiController::class, 'register']);
 Route::get('/login', [SesiController::class, 'index'])->name('login');
 
 Route::get('/event', function () {
-    return view('event', [
+    return view('AdminDashboard.event', [
         "title" => "Events"
     ]);
 });
 
-Route::get('/homepage', function () {
-    return view('homepage', [
-        "title" => "HomePage"
+Route::get('/regevent', function () {
+    return view('AdminDashboard.daftarevent', [
+        "title" => "Admin Dashboard"
     ]);
 });
 
-Route::get('/homepage', function () {
-    return 'homepage';
+Route::get('/brand', function () {
+    return view('AdminDashboard.brand', [
+        "title" => "Admin Dashboard"
+    ]);
+});
+
+
+Route::get('/utama', [userController::class, 'utama'])->name('utama');
+Route::get('/page', [userController::class, 'index'])->name('page');
+
+
+Route::resource('acara', acaraController::class);
+
+Route::get('/notification', function(){
+    emotify('success', 'Dont miss out! Lets Sign up and get your notifications!');
+    return view('AdminDashboard.notification');
+});
+
+Route::get('/userdash', function () {
+    return view('UserDashboard.tab1', [
+        "title" => "User Dashboard"
+    ]);
 });

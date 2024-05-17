@@ -7,39 +7,12 @@
                         <span class="icon">
                             <ion-icon name="school-sharp"></ion-icon>
                         </span>
-                        <span class="title">CampusPulse Admin</span>
+                        <span class="title">Hi!</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="{{ route('utama') }}" id="dashboardLink">
-                        <span class="icon">
-                            <ion-icon name="home-outline"></ion-icon>
-                        </span>
-                        <span class="title">Dashboard</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{{ route('page') }}">
-                        <span class="icon">
-                            <ion-icon name="people-sharp"></ion-icon>
-                        </span>
-                        <span class="title">Members CampusPulse</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="/event">
-                        <span class="icon">
-                            <ion-icon name="grid-sharp"></ion-icon>
-                        </span>
-                        <span class="title">Event Categories</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="/regevent">
+                    <a href="">
                         <span class="icon">
                             <ion-icon name="calendar-sharp"></ion-icon>
                         </span>
@@ -48,11 +21,20 @@
                 </li>
 
                 <li>
-                    <a href="/brand">
+                    <a href="">
                         <span class="icon">
                             <ion-icon name="diamond-outline"></ion-icon>
                         </span>
                         <span class="title">Brand & Partnership</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <ion-icon name="chatbox-sharp"></ion-icon>
+                        </span>
+                        <span class="title">PulseChat</span>
                     </a>
                 </li>
 

@@ -370,6 +370,7 @@ body {
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
 }
+
 .recentCustomers .imgBx {
   position: relative;
   width: 40px;
@@ -377,6 +378,7 @@ body {
   border-radius: 50px;
   overflow: hidden;
 }
+
 .recentCustomers .imgBx img {
   position: absolute;
   top: 0;
@@ -385,25 +387,56 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
+.recentCustomers table {
+  width: 100%;
+  border-collapse: collapse; /* Ensures borders do not double up */
+  border: 1px solid #ddd; /* Adds border around the table */
+}
+
+.recentCustomers table thead th {
+  border-bottom: 1px solid #ddd; /* Adds border to the header row */
+  padding: 12px 10px;
+  text-align: left;
+}
+
+.recentCustomers table tbody tr {
+  border-bottom: 1px solid #ddd; /* Adds border to the rows */
+}
+
+.recentCustomers table tr {
+  border: 1px solid #ddd; /* Adds border to each row */
+}
+
 .recentCustomers table tr td {
   padding: 12px 10px;
+  border-right: 1px solid #ddd; /* Adds border to the columns */
 }
+
+.recentCustomers table tr td:last-child {
+  border-right: none; /* Removes the right border from the last column */
+}
+
 .recentCustomers table tr td h4 {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.2rem;
 }
+
 .recentCustomers table tr td h4 span {
   font-size: 14px;
   color: var(--black2);
 }
+
 .recentCustomers table tr:hover {
   background: var(--blue);
   color: var(--white);
 }
+
 .recentCustomers table tr:hover td h4 span {
   color: var(--white);
 }
+
 
 /* ====================== Responsive Design ========================== */
 @media (max-width: 991px) {

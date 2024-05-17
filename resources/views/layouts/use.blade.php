@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('import/assets/css/style.css') }}">
 </head>
 <body>
-    @include('AdminDashboard.sidebar') <!-- Include navbar here -->
+    @include('UserDashboard.sidebar') <!-- Include navbar here -->
 
     <div class="container">
         @yield('content') <!-- Place where content of each page will be inserted -->

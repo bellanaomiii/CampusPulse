@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- custom css link -->
     <link rel="stylesheet" href="{{ asset('css/campusPulse.css') }}">
+    <script src="{{ asset('js/notification.js') }}"></script>
 </head>
 <body>
     @include('partials.navbar')

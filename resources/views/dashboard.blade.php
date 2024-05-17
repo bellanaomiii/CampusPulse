@@ -133,7 +133,7 @@
                 <p>Effortlessly track ticket sales and participant data.
                     Average registration is 112 people per event! <br/>
                     Want your event to be bustling?</p>
-                <a href="./LoginForm/LoginCampus.php" 
+                <a href="/login" 
                 class="btn"> Upload Your Event Now!</a>
             </div>
 
@@ -142,7 +142,7 @@
                 <p>Indonesia's largest youth platform. 
                     Starting from organizing events, introducing products, improving brand equity, 
                     CampusPulse can help everything!</p>
-                <a href="./LoginForm/LoginCampus.php" 
+                <a href="./login" 
                 class="btn"> We're Here!</a>
             </div>
 
