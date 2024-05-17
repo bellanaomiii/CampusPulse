@@ -44,15 +44,6 @@
                         <span><i class="fa fa-lock"></i></span>
                         <input type="password" name="password" placeholder="Password" class="form-control">
                     </div>
-                    <div class="row mb-3">
-                        <!-- Remember Box -->
-                        <div class="col-auto d-flex align-items-center">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="cb1">
-                                <label class="custom-control-label" for="cb1">Remember me</label>
-                            </div>
-                        </div>
-                    </div>
                     <div class="mb-3">
                         <button name="submit" type="submit" class="btn btn-block">Login</button>
                     </div>

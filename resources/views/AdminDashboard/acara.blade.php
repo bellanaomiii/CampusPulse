@@ -37,7 +37,7 @@
                         @foreach ($data as $item)
                             <tr>
                                 <td>{{ $i }}</td>
-                                <td>{{ $item->category }}</td>
+                                <td>{{ $item->Category }}</td>
                                 <td>
                                     <a href='' class="btn btn-warning btn-sm">Edit</a>
                                     <a href='' class="btn btn-danger btn-sm">Del</a>

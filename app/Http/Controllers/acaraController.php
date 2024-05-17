@@ -15,7 +15,7 @@ class acaraController extends Controller
      */
     public function index() //menampilkan semua data
     {
-        $data = acara::orderBy('category', 'asc')->get();
+        $data = acara::orderBy('Category', 'asc')->get();
         // Cetak data untuk memastikan data sudah diambil dari database
         return view('AdminDashboard.acara')->with('data', $data);
     }
