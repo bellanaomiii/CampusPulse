@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kategori;
+use App\Models\Partnership;
 use Illuminate\Http\Request;
 
-class KategoriController extends Controller
+class PartnershipController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class KategoriController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Kategori  $kategori
+     * @param  \App\Models\Partnership  $partnership
      * @return \Illuminate\Http\Response
      */
-    public function show(Kategori $kategori)
+    public function show(Partnership $partnership)
     {
         //
     }
@@ -52,10 +52,10 @@ class KategoriController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Kategori  $kategori
+     * @param  \App\Models\Partnership  $partnership
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kategori $kategori)
+    public function edit(Partnership $partnership)
     {
         //
     }
@@ -64,28 +64,21 @@ class KategoriController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Kategori  $kategori
+     * @param  \App\Models\Partnership  $partnership
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Kategori $kategori)
+    public function update(Request $request, Partnership $partnership)
     {
-        $validatedData = $request->validate([
-            'nama' => 'required',
-        ]);
-
-        $kategori->update($validatedData);
-
-        return redirect()->route('dashboard.admin.categories')->with('success', 'Kategori berhasil diubah');
-
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Kategori  $kategori
+     * @param  \App\Models\Partnership  $partnership
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kategori $kategori)
+    public function destroy(Partnership $partnership)
     {
         //
     }

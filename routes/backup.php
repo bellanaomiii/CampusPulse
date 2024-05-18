@@ -75,3 +75,9 @@ Route::get('/userdash', function () {
         "title" => "User Dashboard"
     ]);
 });
+
+Route::get('/profile', [ProfileController::class, 'index']);
+Route::get('/edit-profile', [ProfileController::class, 'edit']);
+Route::post('/edit-profile', [ProfileController::class, 'update']);
+Route::get('/change-password', [ProfileController::class, 'changePassword']);
+Route::post('/change-password', [ProfileController::class, 'updatePassword']);

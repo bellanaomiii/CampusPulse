@@ -19,10 +19,25 @@
 
         <div class="icons">
             <div class="fas fa-bars" id="menu"></div>
-
-            <a href="/login">
-                <div class="fas fa-user" id="login-btn"></div>
-            </a>
+            @guest
+                <a href="{{ route('login') }}">
+                    <div class="fas fa-user" id="login-btn"></div>
+                </a>
+            @endguest
+            @auth
+                @if (Auth::user()->role == 'admin')
+                    <a href="{{ route('dashboard.admin') }}">
+                        <div class="fas fa-user" id="login-btn"></div>
+                    </a>
+                @else
+                    <a href="{{ route('dashboard.user') }}">
+                        <div class="fas fa-user" id="login-btn"></div>
+                    </a>
+                    @endif
+                    <a href="{{ route('logout') }}">
+                        <div class="fas fa-logout" id="login-btn"></div>
+                    </a>
+            @endauth
 
             <a href="/notification">
                 <div class="fas fa-bell"></div>
@@ -30,5 +45,6 @@
         </div>
 
     </header>
+
 
     <!-- header section ends -->

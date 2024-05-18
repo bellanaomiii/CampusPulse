@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash; 
-use App\Models\User;  
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 
 class SesiController extends Controller
 {
     function index()
     {
-        return view('login');
+        return view('auth.login');
     }
 
     function login(Request $request){
@@ -28,14 +28,14 @@ class SesiController extends Controller
         $infologin = [
             'email'=>$request->email,
             'password'=>$request->password,
-        ]; 
+        ];
 
         if(Auth::attempt($infologin)){
             if(Auth::user()->role == 'admin'){
-                return redirect('/utama');
+                return redirect()->route('dashboard.admin');
             }elseif (Auth::user()->role == 'user') {
-                return redirect('/userdash');
-            } 
+                return redirect()->route('dashboard.user');
+            }
 
         }else {
             return redirect('/login')->withErrors('Username dan Password tidak sesuai')->withInput();
@@ -43,14 +43,18 @@ class SesiController extends Controller
         }
     }
 
-    function logout(){
+    function logout(Request $request){
         Auth::logout();
-        return redirect('/login');
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('login');
     }
 
     function showRegistrationForm()
     {
-        return view('register');
+        return view('auth.register');
     }
 
     function register(Request $request)
@@ -80,7 +84,7 @@ class SesiController extends Controller
 
         return redirect()->back()->with('success', 'Registrasi berhasil dilakukan! Silahkan login.');
 
-        
+
 
     }
 }

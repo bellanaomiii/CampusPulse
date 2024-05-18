@@ -21,6 +21,7 @@ return new class extends Migration
             $table->date('tanggal');
             $table->string('benefit');
             $table->text('deskripsi');
+            $table->enum('status', ['coming soon', 'on going', 'done']);
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('kategori_id')->references('id')->on('kategoris')->onDelete('cascade');

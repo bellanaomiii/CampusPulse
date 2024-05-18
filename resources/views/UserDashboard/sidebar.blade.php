@@ -48,7 +48,7 @@
                 </li>
 
                 <li>
-                    <a href="/">
+                    <a href="{{ route('logout') }}">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
@@ -64,10 +64,9 @@
                         <div class="toggle">
                             <ion-icon name="menu-outline"></ion-icon>
                         </div>
-    
-        
+
+
                         <div class="user">
                             <img src="{{ asset('import/assets/imgs/customer01.jpg') }}" alt="">
                         </div>
                     </div>
-        

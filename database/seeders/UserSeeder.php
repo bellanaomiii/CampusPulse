@@ -36,6 +36,8 @@ class UserSeeder extends Seeder
                 'nama'=>'Bella',
                 'email'=>'bellaku@gmail.com',
                 'jenis_kelamin'=>'Perempuan',
+                'jurusan'=>'Sistem Informasi',
+                'universitas'=>'Universitas Airlangga',
                 'role'=>'user',
                 'password'=>bcrypt('password')
             ],
@@ -43,6 +45,8 @@ class UserSeeder extends Seeder
                 'nama'=>'Tes',
                 'email'=>'tes@gmail.com',
                 'jenis_kelamin'=>'Laki-laki',
+                'jurusan'=>'Sistem Informasi',
+                'universitas'=>'Universitas Airlangga',
                 'role'=>'user',
                 'password'=>bcrypt('password')
             ],

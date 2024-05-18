@@ -1,5 +1,5 @@
     <!-- =============== Navigation ================ -->
-    <div class="container">
+    <div class="">
         <div class="navigation">
             <ul>
                 <li>
@@ -12,7 +12,7 @@
                 </li>
 
                 <li>
-                    <a href="{{ route('utama') }}" id="dashboardLink">
+                    <a href="{{ route('dashboard.admin') }}" id="dashboardLink">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
@@ -21,7 +21,7 @@
                 </li>
 
                 <li>
-                    <a href="{{ route('page') }}">
+                    <a href="{{ route('dashboard.admin.members') }}">
                         <span class="icon">
                             <ion-icon name="people-sharp"></ion-icon>
                         </span>
@@ -30,7 +30,7 @@
                 </li>
 
                 <li>
-                    <a href="/acara">
+                    <a href="{{ route('dashboard.admin.categories') }}">
                         <span class="icon">
                             <ion-icon name="grid-sharp"></ion-icon>
                         </span>
@@ -39,7 +39,7 @@
                 </li>
 
                 <li>
-                    <a href="/regevent">
+                    <a href="">
                         <span class="icon">
                             <ion-icon name="calendar-sharp"></ion-icon>
                         </span>
@@ -48,7 +48,7 @@
                 </li>
 
                 <li>
-                    <a href="/brand">
+                    <a href="">
                         <span class="icon">
                             <ion-icon name="diamond-outline"></ion-icon>
                         </span>
@@ -66,7 +66,7 @@
                 </li>
 
                 <li>
-                    <a href="/">
+                    <a href="{{ route('logout') }}">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
@@ -77,15 +77,14 @@
         </div>
 
         <!-- ========================= Main ==================== -->
-                <div class="main">
-                    <div class="topbar">
-                        <div class="toggle">
-                            <ion-icon name="menu-outline"></ion-icon>
-                        </div>
-    
-        
-                        <div class="user">
-                            <img src="{{ asset('import/assets/imgs/customer01.jpg') }}" alt="">
-                        </div>
-                    </div>
-        
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+
+                <div class="user">
+                    <img src="{{ asset('import/assets/imgs/customer01.jpg') }}" alt="">
+                </div>
+            </div>
