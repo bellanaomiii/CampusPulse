@@ -16,12 +16,22 @@ class acaraController extends Controller
     public function index() //menampilkan semua data
     {
         $data = acara::orderBy('Category', 'asc')->get();
-        // Cetak data untuk memastikan data sudah diambil dari database
+        $categoriesCount = acara::count();
         return view('AdminDashboard.acara', [
-            "title" => "Acara"
+            "title" => "Acara",
+            "categoriesCount" => $categoriesCount
         ])->with('data', $data);
     }
     
+    public function utama()
+    {
+        $categoriesCount = acara::count();
+        return view('AdminDashboard.utama', [
+            'title' => 'Main Page',
+            "categoriesCount" => $categoriesCount
+        ]);
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -108,6 +118,7 @@ class acaraController extends Controller
      */
     public function destroy($id) //penghapusan data
     {
-        //
+        acara::where('Category', $id)->delete();
+        return redirect()->to('acara')->with('success','Berhasil melakukan delete');
     }
 }

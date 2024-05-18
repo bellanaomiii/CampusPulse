@@ -110,6 +110,7 @@ Route::get('/page', [userController::class, 'index'])->name('page');
 
 
 Route::resource('acara', acaraController::class);
+Route::get('/acara/utama', [acaraController::class, 'utama'])->name('acara.utama');
 
 Route::get('/notification', function(){
     emotify('success', 'Dont miss out! Lets Sign up and get your notifications!');

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class acara extends Model
 {
     use HasFactory;
-    protected $fillable = ['category'];
+    protected $fillable = ['Category'];
     protected $table = 'acara';
     public $timestamps = false;
 }

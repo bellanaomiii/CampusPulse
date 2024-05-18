@@ -43,9 +43,9 @@
                 <div class="my-3 p-3 bg-body rounded shadow-sm">
                     <a href='{{ url('acara') }}' class="btn btn-secondary"><< kembali</a>
                     <div class="mb-3 row">
-                        <label for="category" class="col-sm-2 col-form-label">Category</label>
+                        <label for="Category" class="col-sm-2 col-form-label">Category</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name='category' value="{{ $data->Category }}" id="category">
+                            <input type="text" class="form-control" name='Category' value="{{ $data->Category }}" id="Category">
                         </div>
                     </div>
                     <div class="mb-3 row">

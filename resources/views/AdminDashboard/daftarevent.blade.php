@@ -1,219 +1,92 @@
 @extends('layouts.dash')
 
 @section('content')
-                <!-- ======================= Cards ================== -->
-                <div class="cardBox">
-                    <div class="card">
-                        <div>
-                            <div class="numbers">1,504</div>
-                            <div class="cardName">Daily Views</div>
-                        </div>
-    
-                        <div class="iconBx">
-                            <ion-icon name="eye-outline"></ion-icon>
-                        </div>
-                    </div>
-    
-                    <div class="card">
-                        <div>
-                            <div class="numbers">80</div>
-                            <div class="cardName">Sales</div>
-                        </div>
-    
-                        <div class="iconBx">
-                            <ion-icon name="cart-outline"></ion-icon>
-                        </div>
-                    </div>
-    
-                    <div class="card">
-                        <div>
-                            <div class="numbers">284</div>
-                            <div class="cardName">Comments</div>
-                        </div>
-    
-                        <div class="iconBx">
-                            <ion-icon name="chatbubbles-outline"></ion-icon>
-                        </div>
-                    </div>
-    
-                    <div class="card">
-                        <div>
-                            <div class="numbers">$7,842</div>
-                            <div class="cardName">Earning</div>
-                        </div>
-    
-                        <div class="iconBx">
-                            <ion-icon name="cash-outline"></ion-icon>
-                        </div>
-                    </div>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Data Mahasiswa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body class="bg-light">
+<main class="container">
+
+    <!-- START DATA -->
+    <div class="my-3 p-3 bg-body rounded shadow-sm">
+        <!-- TOMBOL TAMBAH DATA -->
+        <div class="pb-3">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Add Category
+            </button>
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="col-md-1">No</th>
+                    <th class="col-md-3">Poster</th>
+                    <th class="col-md-2">Event Name</th>
+                    <th class="col-md-2">Date</th>
+                    <th class="col-md-2">Description</th>
+                    <th class="col-md-2">Event Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php $i = 1; ?>
+                @foreach ($data as $item)
+                    <tr>
+                        <td>{{ $i }}</td>
+                        <td>{{ $item->Category }}</td>
+                        <td>
+                            <a href='{{ url('acara/'.$item->Category.'/edit') }}' class="btn btn-warning btn-sm">Edit</a>
+                            <form onsubmit="return confirm('Yakin akan menghapus data?')" class='d-inline' action="{{ url('acara/'.$item->Category) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" name="submit" class="btn btn-danger btn-sm">Del</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <?php $i++; ?>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+    <!-- AKHIR DATA -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Category</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-    
-                <!-- ================ Order Details List ================= -->
-                <div class="details">
-                    <div class="recentOrders">
-                        <div class="cardHeader">
-                            <h2>Recent Orders</h2>
-                            <a href="#" class="btn">View All</a>
+                <div class="modal-body">
+                    <!-- START FORM -->
+                    <form action='{{ url('acara') }}' method='post'>
+                        @csrf
+                        <div class="mb-3 row">
+                            <label for="category" class="col-sm-2 col-form-label">Category</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name='Category' value="{{ old('Category') }}" id="Category">
+                            </div>
                         </div>
-    
-                        <table>
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Price</td>
-                                    <td>Payment</td>
-                                    <td>Status</td>
-                                </tr>
-                            </thead>
-    
-                            <tbody>
-                                <tr>
-                                    <td>Star Refrigerator</td>
-                                    <td>$1200</td>
-                                    <td>Paid</td>
-                                    <td><span class="status delivered">Delivered</span></td>
-                                </tr>
-    
-                                <tr>
-                                    <td>Dell Laptop</td>
-                                    <td>$110</td>
-                                    <td>Due</td>
-                                    <td><span class="status pending">Pending</span></td>
-                                </tr>
-    
-                                <tr>
-                                    <td>Apple Watch</td>
-                                    <td>$1200</td>
-                                    <td>Paid</td>
-                                    <td><span class="status return">Return</span></td>
-                                </tr>
-    
-                                <tr>
-                                    <td>Addidas Shoes</td>
-                                    <td>$620</td>
-                                    <td>Due</td>
-                                    <td><span class="status inProgress">In Progress</span></td>
-                                </tr>
-    
-                                <tr>
-                                    <td>Star Refrigerator</td>
-                                    <td>$1200</td>
-                                    <td>Paid</td>
-                                    <td><span class="status delivered">Delivered</span></td>
-                                </tr>
-    
-                                <tr>
-                                    <td>Dell Laptop</td>
-                                    <td>$110</td>
-                                    <td>Due</td>
-                                    <td><span class="status pending">Pending</span></td>
-                                </tr>
-    
-                                <tr>
-                                    <td>Apple Watch</td>
-                                    <td>$1200</td>
-                                    <td>Paid</td>
-                                    <td><span class="status return">Return</span></td>
-                                </tr>
-    
-                                <tr>
-                                    <td>Addidas Shoes</td>
-                                    <td>$620</td>
-                                    <td>Due</td>
-                                    <td><span class="status inProgress">In Progress</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-    
-                    <!-- ================= New Customers ================ -->
-                    <div class="recentCustomers">
-                        <div class="cardHeader">
-                            <h2>Recent Customers</h2>
+                        <div class="mb-3 row">
+                            <div class="col-sm-10 offset-sm-2">
+                                <button type="submit" class="btn btn-primary" name="submit">Add</button>
+                            </div>
                         </div>
-    
-                        <table>
-                            <tr>
-                                <td width="60px">
-                                    <div class="imgBx"><img src="{{ asset('import/assets/imgs/customer02.jpg') }}" alt=""></div>
-                                </td>
-                                <td>
-                                    <h4>David <br> <span>Italy</span></h4>
-                                </td>
-                            </tr>
-    
-                            <tr>
-                                <td width="60px">
-                                    <div class="imgBx"><img src="{{ asset('import/assets/imgs/customer01.jpg') }}" alt=""></div>
-                                </td>
-                                <td>
-                                    <h4>Amit <br> <span>India</span></h4>
-                                </td>
-                            </tr>
-    
-                            <tr>
-                                <td width="60px">
-                                    <div class="imgBx"><img src="{{ asset('import/assets/imgs/customer02.jpg') }}" alt=""></div>
-                                </td>
-                                <td>
-                                    <h4>David <br> <span>Italy</span></h4>
-                                </td>
-                            </tr>
-    
-                            <tr>
-                                <td width="60px">
-                                    <div class="imgBx"><img src="{{ asset('import/assets/imgs/customer01.jpg') }}" alt=""></div>
-                                </td>
-                                <td>
-                                    <h4>Amit <br> <span>India</span></h4>
-                                </td>
-                            </tr>
-    
-                            <tr>
-                                <td width="60px">
-                                    <div class="imgBx"><img src="{{ asset('import/assets/imgs/customer02.jpg') }}" alt=""></div>
-                                </td>
-                                <td>
-                                    <h4>David <br> <span>Italy</span></h4>
-                                </td>
-                            </tr>
-    
-                            <tr>
-                                <td width="60px">
-                                    <div class="imgBx"><img src="{{ asset('import/assets/imgs/customer01.jpg') }}" alt=""></div>
-                                </td>
-                                <td>
-                                    <h4>Amit <br> <span>India</span></h4>
-                                </td>
-                            </tr>
-    
-                            <tr>
-                                <td width="60px">
-                                    <div class="imgBx"><img src="{{ asset('import/assets/imgs/customer01.jpg') }}" alt=""></div>
-                                </td>
-                                <td>
-                                    <h4>David <br> <span>Italy</span></h4>
-                                </td>
-                            </tr>
-    
-                            <tr>
-                                <td width="60px">
-                                    <div class="imgBx"><img src="{{ asset('import/assets/imgs/customer02.jpg') }}" alt=""></div>
-                                </td>
-                                <td>
-                                    <h4>Amit <br> <span>India</span></h4>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
+                    </form>
+                    <!-- AKHIR FORM -->
                 </div>
             </div>
         </div>
-    
-        <!-- =========== Scripts =========  -->
-        <script src="{{ asset('import/assets/js/main.js') }}"></script>
-    
-        <!-- ====== ionicons ======= -->
-        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </div>
+
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
+
 @endsection

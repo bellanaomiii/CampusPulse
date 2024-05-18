@@ -14,14 +14,6 @@
 
     <!-- START DATA -->
     <div class="my-3 p-3 bg-body rounded shadow-sm">
-        <!-- FORM PENCARIAN -->
-        <div class="pb-3">
-            <form class="d-flex" action="" method="get">
-                <input class="form-control me-1" type="search" name="katakunci" value="{{ Request::get('katakunci') }}" placeholder="Masukkan kata kunci" aria-label="Search">
-                <button class="btn btn-secondary" type="submit">Cari</button>
-            </form>
-        </div>
-
         <!-- TOMBOL TAMBAH DATA -->
         <div class="pb-3">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -45,7 +37,11 @@
                         <td>{{ $item->Category }}</td>
                         <td>
                             <a href='{{ url('acara/'.$item->Category.'/edit') }}' class="btn btn-warning btn-sm">Edit</a>
-                            <a href='' class="btn btn-danger btn-sm">Del</a>
+                            <form onsubmit="return confirm('Yakin akan menghapus data?')" class='d-inline' action="{{ url('acara/'.$item->Category) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" name="submit" class="btn btn-danger btn-sm">Del</button>
+                            </form>
                         </td>
                     </tr>
                     <?php $i++; ?>
@@ -70,7 +66,7 @@
                         <div class="mb-3 row">
                             <label for="category" class="col-sm-2 col-form-label">Category</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name='category' value="{{ old('category') }}" id="category">
+                                <input type="text" class="form-control" name='Category' value="{{ old('Category') }}" id="Category">
                             </div>
                         </div>
                         <div class="mb-3 row">

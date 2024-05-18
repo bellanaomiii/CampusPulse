@@ -17,6 +17,7 @@
                     </div>
     
                     <div class="card">
+                        <a href="{{ route('acara.index') }}" style="text-decoration: none; color: inherit;">
                         <div>
                             <div class="numbers"></div>
                             <div class="cardName">Event Categories</div>

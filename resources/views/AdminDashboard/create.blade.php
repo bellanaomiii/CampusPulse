@@ -41,9 +41,9 @@
                 @csrf
                 <div class="my-3 p-3 bg-body rounded shadow-sm">
                     <div class="mb-3 row">
-                        <label for="category" class="col-sm-2 col-form-label">Category</label>
+                        <label for="Category" class="col-sm-2 col-form-label">Category</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name='category' value="{{ old('category') }}" id="category">
+                            <input type="text" class="form-control" name='Category' value="{{ old('Category') }}" id="Category">
                         </div>
                     </div>
                     <div class="mb-3 row">
