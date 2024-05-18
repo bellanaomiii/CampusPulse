@@ -13,9 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('acara', function (Blueprint $table) {
-            $table->increments('No');
-            $table->string('Category');
+        Schema::create('forums', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->string('judul');
+            $table->string('pesan');
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -26,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('acara');
+        Schema::dropIfExists('forums');
     }
 };

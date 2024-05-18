@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-<section class="products" id="products">
+<section class="products" style="margin-top: 100px" id="products">
 
     <div class="box-container">
 
@@ -95,6 +95,6 @@
             </div>
         </div>
     </div>
-    
+
 </section>
 @endsection

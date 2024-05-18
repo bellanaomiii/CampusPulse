@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Login Form</title>
     <meta charset="UTF-8">
@@ -7,15 +8,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Bootstrap only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    
+
     <!-- CSS link -->
     <link rel="stylesheet" href="css/CampusPulse.css">
- 
+
 </head>
+
 <body style="background-image: url('img/bgbiru.jpg')">
     <div class="container infinity-container">
         <div class="row">
@@ -26,11 +29,11 @@
                 </div>
 
                 @if ($errors->any())
-                <div class="alert alert-danger">
-                    @foreach ($errors->all() as $item)
-                        <li>{{ $item }}</li>
-                    @endforeach
-                </div>
+                    <div class="alert alert-danger">
+                        @foreach ($errors->all() as $item)
+                            <li>{{ $item }}</li>
+                        @endforeach
+                    </div>
                 @endif
 
                 <!--LOGIN FORM-->
@@ -38,7 +41,8 @@
                     @csrf
                     <div class="form-input">
                         <span><i class="fa fa-envelope"></i></span>
-                        <input type="email" value="{{ old('email') }}" name="email" placeholder="Email" class="form-control">
+                        <input type="email" value="{{ old('email') }}" name="email" placeholder="Email"
+                            class="form-control">
                     </div>
                     <div class="form-input">
                         <span><i class="fa fa-lock"></i></span>
@@ -63,11 +67,11 @@
                         <a href="#" class="btn btn-social btn-twitter"><i class="fab fa-twitter"></i></a>
                     </div>
 
-                    <div class="text-center mb-5" style="color: #000;">Don't have an account? 
+                    <div class="text-center mb-5" style="color: #000;">Don't have an account?
                         <a class="register-link" href="{{ route('register') }}">Register here</a>
                     </div>
                 </form>
-            </div> 
+            </div>
             <div class="col-md-1 infinity-right-space"></div>
         </div>
     </div>

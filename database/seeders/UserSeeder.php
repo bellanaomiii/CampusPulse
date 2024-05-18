@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class DummyUsersSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,24 +17,34 @@ class DummyUsersSeeder extends Seeder
     {
         $userData = [
             [
-                'name'=>'Admin1',
+                'nama'=>'Admin1',
                 'email'=>'adminCampus@gmail.com',
+                'jenis_kelamin'=>'Perempuan',
                 'role'=>'admin',
-                'password'=>bcrypt('12345678')
+                'password'=>bcrypt('password')
             ],
 
             [
-                'name'=>'Admin2',
+                'nama'=>'Admin2',
                 'email'=>'adminCampus2@gmail.com',
+                'jenis_kelamin'=>'Laki-laki',
                 'role'=>'admin',
-                'password'=>bcrypt('123456789')
+                'password'=>bcrypt('password')
             ],
 
             [
-                'name'=>'Bella',
+                'nama'=>'Bella',
                 'email'=>'bellaku@gmail.com',
+                'jenis_kelamin'=>'Perempuan',
                 'role'=>'user',
-                'password'=>bcrypt('123456')
+                'password'=>bcrypt('password')
+            ],
+            [
+                'nama'=>'Tes',
+                'email'=>'tes@gmail.com',
+                'jenis_kelamin'=>'Laki-laki',
+                'role'=>'user',
+                'password'=>bcrypt('password')
             ],
 
         ];

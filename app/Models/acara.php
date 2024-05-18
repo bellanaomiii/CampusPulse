@@ -5,10 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class acara extends Model
+class Acara extends Model
 {
     use HasFactory;
-    protected $fillable = ['Category'];
-    protected $table = 'acara';
-    public $timestamps = false;
+
+    public function kategori()
+    {
+        return $this->belongsTo(Kategori::class);
+    }
+
+    public function pendaftars()
+    {
+        return $this->hasMany(Pendaftar::class);
+    }
 }
